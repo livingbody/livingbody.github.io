@@ -3,7 +3,7 @@ layout: post
 title:  "你好，添加信息测试!"
 categories: 测试
 tags:  git test
-author:livingbody
+author: livingbody
 ---
 
 * content

@@ -2,10 +2,9 @@
 layout: post
 title:  "VMware Workstation 与 Device/Credential Guard 不兼容问题解决!"
 date:   2015-02-10 15:14:54
-categories: jekyll
-tags: jekyll
-excerpt: vmware问题解决。
-mathjax: true
+categories: vmware
+tags: vmware
+author: livingbody
 ---
 
 * content
