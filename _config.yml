@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 刘建建的技术专栏
+title: livingbody的技术专栏
 brief-intro: Android and Python Coder
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://livingbody.github.io" # the base hostname & protocol for your site
@@ -20,7 +20,7 @@ email: 155203340@QQ.com
 
 
 
-description_footer: 来自刘建建的个人专栏！
+description_footer: 来自livingbody的个人专栏！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
