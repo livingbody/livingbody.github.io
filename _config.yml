@@ -31,9 +31,9 @@ disqus_shortname: #gaohaoyang
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
-
+#hm.src = "//hm.baidu.com/hm.js?1f224db6d8469c44f94c4c26058e5538";
 # xxxxx字符串
-# baidu_tongji_id: 1f224db6d8469c44f94c4c26058e5538
+baidu_tongji_id: 1f224db6d8469c44f94c4c26058e5538
 
 # Build settings
 markdown: kramdown
@@ -55,4 +55,4 @@ excerpt_separator: "\n\n\n\n"
 # paginate
 plugins: [jekyll-paginate]
 paginate: 6
-port: 4001
+
