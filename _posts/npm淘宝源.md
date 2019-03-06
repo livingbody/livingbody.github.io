@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "设置npm淘宝源"
+date:   2018-03-06 10:00:00
+categories: npm
+tags: npm
+author: livingbody
+---
+
+
+# 1.设置npm淘宝源
+```bash
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+# 2.验证环境
+```bash
+node -v
+npm -v
+```
+
+# 3.git仓库开发实践
+
+```bash
+$ git init
+$ git add .
+$ git commit # 输入提交信息并保存
+$ git remote add origin git://your-repo-url
+$ git push origin master -u
+$ git checkout -b feature/0.1.0                    # 创建分支
+$ git push origin feature/0.1.0                    # 提交分支
+```
+

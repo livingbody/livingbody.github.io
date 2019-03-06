@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "调优策略：初始化堆内存与最大相同，减少垃圾回收次数"
+date:   2018-03-06 10:00:00
+categories: JVM参数调优
+tags: JVM参数调优
+author: livingbody
+---
+
+
+
+# JVM参数调优
+
+调优策略：初始化堆内存与最大相同，减少垃圾回收次数。
+
+```java
+-XX:+PrintGCDetails -Xmx32M -Xms1M
+```
+
+一直垃圾回收。。。
+
+最好配置为256M。
+
+默认4G

@@ -1,0 +1,285 @@
+---
+layout: post
+title:  "Vue.js安装"
+date:   2018-03-06 10:00:00
+categories: Vue.js
+tags: Vue.js
+author: livingbody
+---
+
+# 安装 Vue.js
+
+## 独立版本
+
+直接下载并用 `<script>` 标签引入，`Vue` 会被注册为一个全局变量。**重要提示：在开发时请用开发版本，遇到常见错误它会给出友好的警告。**
+
+开发版本包含完整的警告和调试模式生产版本删除了警告，{{gz_size}}kb min+gzip
+
+### CDN
+
+可以从 jsdelivr 或 cdnjs 获取（版本更新可能略滞后）。
+
+### CSP 兼容版本
+
+有些环境，如 Google Chrome Apps，强制应用内容安全策略 (CSP) ，不能使用 `new Function()` 对表达式求值。这时可以用 [CSP 兼容版本](https://github.com/vuejs/vue/tree/csp/dist)。
+
+## NPM
+
+在用 Vue.js 构建大型应用时推荐使用 NPM 安装，NPM 能很好地和诸如 [Webpack](http://webpack.github.io/) 或 [Browserify](http://browserify.org/) 的 CommonJS 模块打包器配合使用。Vue.js 也提供配套工具来开发单文件组件。
+
+```bash
+# 最新稳定版本
+$ npm install vue
+# 最新稳定 CSP 兼容版本
+$ npm install vue@csp
+```
+
+## 命令行工具
+
+Vue.js 提供一个[官方命令行工具](https://github.com/vuejs/vue-cli)，可用于快速搭建大型单页应用。该工具提供开箱即用的构建工具配置，带来现代化的前端开发流程。只需一分钟即可启动带热重载、保存时静态检查以及可用于生产环境的构建配置的项目：
+
+```bash
+# 全局安装 vue-cli
+$ npm install -g vue-cli
+# 创建一个基于 "webpack" 模板的新项目
+$ vue init webpack my-project
+# 安装依赖，走你
+$ cd my-project
+$ npm install
+$ npm run dev
+```
+
+## 开发版本
+
+**重要**：发布到 NPM 上的 CommonJS 包 (`vue.common.js`) **没有**签入源码，因此要使用 GitHub 上最新的源码，自己编译：
+
+```bash
+git clone https://github.com/vuejs/vue.git node_modules/vue
+cd node_modules/vue
+npm install
+npm run build
+```
+
+## Bower
+
+```bash
+# 最新稳定版本
+$ bower install vue
+```
+
+## AMD 模块加载器
+
+独立版本或通过 Bower 安装的版本已用 [UMD](https://github.com/umdjs/umd#readme) 包装，因此它们可以直接用作 AMD 模块。
+
+# vue起步
+
+些基础示例。如果你喜欢用包管理器下载/安装，查看安装教程。
+
+### Hello World
+
+```html
+<div id="app">
+  {{ message }}
+</div>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+{% raw %}
+<div id="app" class="demo">
+  {{ message }}
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+</script>
+{% endraw %}
+```
+
+### 双向绑定
+
+```html
+<div id="app">
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+{% raw %}
+<div id="app2" class="demo">
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+<script>
+new Vue({
+  el: '#app2',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+</script>
+{% endraw %}
+```
+
+### 渲染列表
+
+```html
+<div id="app">
+  <ul>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ul>
+</div>
+new Vue({
+  el: '#app',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue.js' },
+      { text: 'Build Something Awesome' }
+    ]
+  }
+})
+{% raw %}
+<div id="app3" class="demo">
+  <ul>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ul>
+</div>
+<script>
+new Vue({
+  el: '#app3',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue.js' },
+      { text: 'Build Something Awesome' }
+    ]
+  }
+})
+</script>
+{% endraw %}
+```
+
+### 处理用户输入
+
+```html
+<div id="app">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
+{% raw %}
+<div id="app4" class="demo">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+<script>
+new Vue({
+  el: '#app4',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
+</script>
+{% endraw %}
+```
+
+### 综合
+
+```html
+<div id="app">
+  <input v-model="newTodo" v-on:keyup.enter="addTodo">
+  <ul>
+    <li v-for="todo in todos">
+      <span>{{ todo.text }}</span>
+      <button v-on:click="removeTodo($index)">X</button>
+    </li>
+  </ul>
+</div>
+new Vue({
+  el: '#app',
+  data: {
+    newTodo: '',
+    todos: [
+      { text: 'Add some todos' }
+    ]
+  },
+  methods: {
+    addTodo: function () {
+      var text = this.newTodo.trim()
+      if (text) {
+        this.todos.push({ text: text })
+        this.newTodo = ''
+      }
+    },
+    removeTodo: function (index) {
+      this.todos.splice(index, 1)
+    }
+  }
+})
+{% raw %}
+<div id="app5" class="demo">
+  <input v-model="newTodo" v-on:keyup.enter="addTodo">
+  <ul>
+    <li v-for="todo in todos">
+      <span>{{ todo.text }}</span>
+      <button v-on:click="removeTodo($index)">X</button>
+    </li>
+  </ul>
+</div>
+<script>
+new Vue({
+  el: '#app5',
+  data: {
+    newTodo: '',
+    todos: [
+      { text: 'Add some todos' }
+    ]
+  },
+  methods: {
+    addTodo: function () {
+      var text = this.newTodo.trim()
+      if (text) {
+        this.todos.push({ text: text })
+        this.newTodo = ''
+      }
+    },
+    removeTodo: function (index) {
+      this.todos.splice(index, 1)
+    }
+  }
+})
+</script>
+{% endraw %}
+```
+
+希望上例能让你对 Vue.js 的工作原理有一个基础概念。我知道你现在有许多疑问——继续阅读，在后面的教程将一一解答。
