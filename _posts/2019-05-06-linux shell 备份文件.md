@@ -13,16 +13,29 @@ author: livingbody
 
 <u>下面为备份日志至ftp，加上定时则更佳</u>
 
-`bakdir=log`
-`dd=$(date +%F)`
 
-`cd /var`
-`tar -zcf ${bakdir}_${dd}.tar.gz ${bakdir}
+
+```bash
+#!/bin/bash
+#scripts for dirbakup and upload to ftp server
+#author by livingbody
+
+
+bakdir=log
+dd=$(date +%F)
+
+cd /var
+tar -zcf ${bakdir}_${dd}.tar.gz ${bakdir}
 sleep 1
 ftp -n <<-EOF
 open 192.168.43.200
 user root root
-put ${bakdir}_${dd}.tar.gz`
-`bye`
-`EOF`
-`rm -rf ${bakdir}_${dd}.tar.gz`
+put ${bakdir}_${dd}.tar.gz
+bye
+EOF
+rm -rf ${bakdir}_${dd}.tar.gz
+
+
+
+```
+
