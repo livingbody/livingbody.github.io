@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "爬取豆瓣电影排行榜并保存"
-date:   2019-02-21 20:52
 categories: python
 tags: python
 author: livingbody

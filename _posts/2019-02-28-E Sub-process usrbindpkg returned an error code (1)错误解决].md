@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "E Sub-process usrbindpkg returned an error code (1)错误解决]"
-date:   2018-02-28 10:00:00
 categories: linux
 tags: linux
 author: livingbody

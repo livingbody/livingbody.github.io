@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "增加samba用户提示Failed to add entry for user"
-date:   2018-02-28 10:00:00
 categories: linux
 tags: samba
 author: livingbody

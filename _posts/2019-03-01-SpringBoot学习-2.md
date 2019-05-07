@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "SpringBoot学习2"
-date:   2018-03-01 09:30:00
 categories: java
 tags: SpringBoot
 author: livingbody

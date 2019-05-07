@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "pymsql转移函数处理解决不了问题"
-date:   2015-02-10 15:14:54
 categories: python
 tags: 爬虫
 author:  livingbody

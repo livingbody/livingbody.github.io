@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "undertow web服务器初体验"
-date:   2018-03-06 10:00:00
 categories: undertow web
 tags: undertow web
 author: livingbody

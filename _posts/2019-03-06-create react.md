@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "react learn"
-date:   2018-03-06 10:00:00
 categories: react
 tags: react
 author: livingbody

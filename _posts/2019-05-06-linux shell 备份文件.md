@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "linux shell 备份文件"
-date:   2019-05-06 23:54:00
 categories: linux 
 tags: linux 
 author: livingbody
