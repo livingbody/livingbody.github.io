@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  " Windows下文本上传linux脚本出现错误"
+title:    Windows下文本上传linux脚本出现错误 
 categories: linux
 tags: linux shell
 author: livingbody
